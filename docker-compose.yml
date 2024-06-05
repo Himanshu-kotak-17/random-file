@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: my-nodejs-app
+    ports:
+      - "3000:3000"
+    logging:
+      driver: awslogs
+      options:
+        awslogs-region: us-east-1
+        awslogs-group: your-log-group
+        awslogs-stream: your-log-stream
+
+        
