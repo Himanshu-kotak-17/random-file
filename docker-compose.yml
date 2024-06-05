@@ -12,7 +12,7 @@ services:
       driver: awslogs
       options:
         awslogs-region: us-east-1
-        awslogs-group: your-log-group
-        awslogs-stream: your-log-stream
+        awslogs-group: task-logs
+        awslogs-stream: task-stream
 
         
