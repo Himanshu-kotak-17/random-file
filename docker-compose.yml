@@ -6,6 +6,8 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: my-nodejs-app
+    environment:
+      - AWSLOGS_STREAM=task-stream-${CONTAINER_ID}
     ports:
       - "3000:3000"
     logging:
@@ -13,6 +15,6 @@ services:
       options:
         awslogs-region: us-east-1
         awslogs-group: task-logs
-        awslogs-stream: task-stream-{hostname}
+        awslogs-stream: ${AWSLOGS_STREAM}
 
         
