@@ -13,6 +13,6 @@ services:
       options:
         awslogs-region: us-east-1
         awslogs-group: task-logs
-        awslogs-stream: task-stream
+        awslogs-stream: task-stream-{container_id}
 
         
