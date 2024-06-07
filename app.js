@@ -37,6 +37,9 @@ app.get('/', (req, res) => {
         }
     });
 });
+app.get('/health', (req, res) => {
+    res.status(200).json({ status: 'UP' });
+});
 
 // Start the server
 const PORT = process.env.PORT || 3000;
